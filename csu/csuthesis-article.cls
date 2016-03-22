@@ -1,5 +1,6 @@
-\NeedsTexFormat{LaTeX2e}
-\ProvidesClass{csuthesis}[2016/03   Central South University Template]
+%\NeedsTexFormat{LaTeX2e}
+\ProvidesClass{csuthesis-article}
+%[2016/03   Central South University Template]
 
 %\newif\ifcsu@bwprint\csu@bwprintfalse
 %\DeclareOption{colorprint}{csu@bwprintfalse}
@@ -11,11 +12,11 @@
 
 \LoadClass[a4paper, 12pt]{article}
 
-\RequirePackage{ifxetex}
-\RequireXeTex
-\ifxetex\else
-\ClassError{mcmthesis}{You must use the `xelatex' driver\MessageBreak Please choose `xelatex'}{Just choose `xelatex', no `pdflatex' or `latex' and so on.}
-\fi
+%\RequirePackage{ifxetex}
+%\RequireXeTex
+%\ifxetex\else
+%\ClassError{mcmthesis}{You must use the `xelatex' driver\MessageBreak Please choose `xelatex'}{Just choose `xelatex', no `pdflatex' or `latex' and so on.}
+%\fi
 \RequirePackage{ctex}
 \RequirePackage{geometry}
 \RequirePackage{amsmath}
@@ -41,7 +42,7 @@
 \RequirePackage{hyperref}
 
 \geometry{top=25mm,bottom=25mm,left=30mm,right=20mm}
-\renewcommand*{\baselinestretch}{1.38}
+\renewcommand*{\baselinestretch}{1.62}
 
 \let\csu@oldtabular\tabular
 \let\csu@endoldtabular\endtabular
@@ -87,13 +88,14 @@
 \captionsetup[figure]{%
 	format=hang,   % 标题从第二行开始都有缩进, 应该和 justification=raggedright 的效果一样.
 	labelsep=quad, % 分隔符是一个空格
-	font={song,minusfour,bf}, % 图的字体, 宋体小四
+	font={song, minusfour, bf},
+	%font={\heiti,\zihao{5},bf}, % 图的字体, 宋体小四
 	position=bottom % position=bottom, 不代表标题放在下面, 标题仍放在你放\caption的位置.
 }
 \captionsetup[table]{%
 	format=hang,   % 标题从第二行开始都有缩进, 应该和 justification=raggedright 的效果一样.
 	labelsep=quad, % 分隔符是一个空格
-	font={song,minusfour,bf}, % 表的字体, 宋体小四
+	font={\heiti,\zihao{5},bf}, % 表的字体, 宋体小四
 	position=top % position=bottom, 不代表标题放在下面, 标题仍放在你放\caption的位置.
 }
 \setlist{%
@@ -119,10 +121,10 @@
 		breaklinks=true}%
 }
 
-\ifcsu@bwprint\csu@bwprint
-\AtBeginDocument{\hypersetup{hidelinks}}
-\else\relax
-\fi
+%\ifcsu@bwprint\csu@bwprint
+%\AtBeginDocument{\hypersetup{hidelinks}}
+%\else\relax
+%\fi
 
 \renewcommand\contentsname{\csu@cap@contentsname}
 \renewcommand\listfigurename{\csu@cap@listfigurename}
